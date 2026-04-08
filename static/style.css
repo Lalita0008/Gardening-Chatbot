@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f7ee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 520px;
+  height: 92vh;
+  max-height: 700px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+  background: #4a8c3f;
+  padding: 18px 20px;
+}
+
+.chat-header h1 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Chat window */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-window::-webkit-scrollbar { width: 5px; }
+.chat-window::-webkit-scrollbar-thumb { background: #c8e6c0; border-radius: 3px; }
+
+/* Bubbles */
+.bubble {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.bubble.user {
+  align-self: flex-end;
+  background: #4a8c3f;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.bubble.bot {
+  align-self: flex-start;
+  background: #eaf4e7;
+  color: #1e2d1a;
+  border: 1px solid #cde3c7;
+  border-bottom-left-radius: 4px;
+}
+
+.bubble.error {
+  align-self: flex-start;
+  background: #fff3f3;
+  color: #c0392b;
+  border: 1px solid #fcc;
+  border-bottom-left-radius: 4px;
+}
+
+/* Input area */
+.chat-footer {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  border-top: 1px solid #e0edd9;
+  background: #ffffff;
+}
+
+#chatInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #c8dfc2;
+  border-radius: 22px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  background: #f8fbf7;
+  color: #1e2d1a;
+}
+
+#chatInput:focus {
+  border-color: #4a8c3f;
+  background: #ffffff;
+}
+
+#sendBtn {
+  padding: 10px 20px;
+  background: #4a8c3f;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#sendBtn:hover  { background: #3a7230; }
+#sendBtn:active { background: #2d5a27; }
+#sendBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 540px) {
+  .chat-container { height: 100vh; border-radius: 0; }
+}
